@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Artline Frames — artlineframes.com
 
-## Getting Started
-
-First, run the development server:
+Portfolio and lead-generation site for Artline Frames (Dubai, UAE). Next.js 16 + Tailwind CSS 4, fully static.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where to edit
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | File |
+| --- | --- |
+| Phone, WhatsApp, address, hours, socials, years, turnaround | `src/lib/site.ts` |
+| Services, prices, gallery items, FAQ, testimonials, clients | `src/lib/content.ts` |
+| Logo files | `public/brand/` (original in `brand-source/`) |
+| Gallery photos | `public/gallery/` → set `src: "/gallery/photo.jpg"` on the gallery item |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Enquiries go through WhatsApp: the contact form opens a WhatsApp chat with the customer's details pre-filled, so no email service is needed.
 
-## Learn More
+## Launch checklist
 
-To learn more about Next.js, take a look at the following resources:
+- [ ] Real WhatsApp number (digits only, e.g. `971501234567`) and phone in `site.ts`
+- [ ] Shop address, Google Maps / Google Business link, opening hours
+- [ ] Confirm email address, years of experience, turnaround time
+- [ ] Confirm every "starting from" price in `content.ts`
+- [ ] Replace placeholder gallery art with real photos (aim for 12–24, at least 1600px wide)
+- [ ] Founder story on the About page (`src/app/about/page.tsx`)
+- [ ] Instagram / Facebook / TikTok links
+- [ ] Real client names or logos (the Clients section stays hidden while the list is empty)
+- [ ] Real customer reviews, then set `showTestimonials: true` (the section only shows in dev until then)
+- [ ] Create a Google Business Profile and link it from `mapsUrl`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to GitHub, import the repo on Vercel and add the `artlineframes.com` domain in Vercel's project settings.
